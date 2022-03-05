@@ -19,10 +19,24 @@ def isPrimeForEx41(number):
 
     return True
 
+def is_prime(n: int) -> bool:
+    """Got it from the internet. Primality test using 6k+-1 optimization."""
+    if n <= 3:
+        return n > 1
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i ** 2 <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
 def isPrime(number):
+    """Don't use this one, use the newer is_prime()"""
     if(number % 2) == 0:
         return False
-    for i in range(3, int(number/2)+1, 2):
+    for i in range(3, int(number/3), 2):
         if(number % i) == 0:
             return False
 
@@ -33,21 +47,12 @@ def getNextPrimeNumber(startingNumber):
         startingNumber += 1
     else:
         startingNumber += 2
-
-    foundDivider = False
     
     while True:
-        for i in range(3, int(startingNumber/3), 2):
-            if startingNumber % i == 0:
-                foundDivider = True
-                break
-        
-        if foundDivider:
-            startingNumber += 2
-            foundDivider = False
-        else:
+        if is_prime(startingNumber):
             return startingNumber
-
+        else:
+            startingNumber += 2
 
 
 def getDivisorsOld(number):

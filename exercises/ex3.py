@@ -1,17 +1,17 @@
-import auxiliarFunctions
+import auxiliar_functions
 
 def exercise3():
 	value = 600851475143
 	i = 2
 	primes_used = []
-	while not auxiliarFunctions.isPrime(value):
+	while not auxiliar_functions.is_prime(value):
 		print(i)		
 		if value % i == 0:
 			primes_used.append(i)
 			value = value / i
 			i = 2
 
-		i = auxiliarFunctions.getNextPrimeNumber(i)
+		i = auxiliar_functions.get_next_prime_number(i)
 
 	print(f"Result {value}")
 	print(f"Primes used: {primes_used}")

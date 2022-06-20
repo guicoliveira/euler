@@ -1,5 +1,5 @@
 import math
-import auxiliarFunctions
+import auxiliar_functions
 import time
 import random
 from auxiliarClasses.Tree import *

@@ -6,5 +6,6 @@ def exercise1():
 	
 	print(f"Result: {sum}")
 
+
 if __name__ == '__main__':
 	exercise1()

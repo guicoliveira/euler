@@ -1,4 +1,4 @@
-import auxiliarFunctions
+import auxiliar_functions
 
 def rotate_digits(digits, length):
     aux = ""
@@ -25,7 +25,7 @@ def check_rotations(number):
 
     for i in range(length-1):
         digits = rotate_digits(digits, length)
-        if not auxiliarFunctions.is_prime(int(digits)):
+        if not auxiliar_functions.is_prime(int(digits)):
             return False
 
     return True
@@ -34,7 +34,7 @@ def exercise35():
 	count = 0
 
 	for i in range(2, 1000000):		
-		if not auxiliarFunctions.is_prime(i):
+		if not auxiliar_functions.is_prime(i):
 			continue
 
 		if not check_rotations(i):

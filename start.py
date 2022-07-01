@@ -49,16 +49,7 @@ print("--- Took %s seconds ---" % (time.time() - start_time))
 '''
 
 '''#6
-squareOfSums = 0
-sumSquares = 0
-for i in range(1, 101):
-    sumSquares += (i * i)
-    squareOfSums += i
 
-squareOfSums = squareOfSums * squareOfSums
-
-result = squareOfSums - sumSquares
-print(result)
 '''
 
 '''#5

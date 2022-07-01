@@ -13,7 +13,6 @@ def exercise27():
 				result = (n ** 2) + (n * a) + b
 				if not auxiliar_functions.is_prime(result):
 					if n > number_of_primes:
-						#print(f"New best: a[{a}] b[{b}] - {n} primes")
 						number_of_primes = n
 						best_a = a
 						best_b = b				

@@ -1,4 +1,4 @@
-import auxiliarFunctions
+import auxiliar_functions
 
 def exercise27():
 
@@ -11,9 +11,8 @@ def exercise27():
 			n = 0
 			while True:
 				result = (n ** 2) + (n * a) + b
-				if not auxiliarFunctions.is_prime(result):
+				if not auxiliar_functions.is_prime(result):
 					if n > number_of_primes:
-						#print(f"New best: a[{a}] b[{b}] - {n} primes")
 						number_of_primes = n
 						best_a = a
 						best_b = b				

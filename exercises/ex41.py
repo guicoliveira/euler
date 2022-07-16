@@ -1,4 +1,4 @@
-import auxiliarFunctions
+import auxiliar_functions
 import time
 
 def exercise41():
@@ -20,9 +20,8 @@ def exercise41():
 
 		for i in range(last, initial, -2):
 			if checkPandigital(i):
-				if auxiliarFunctions.is_prime(i):
+				if auxiliar_functions.is_prime(i):
 					print("Pandigital and prime: " + str(i))
-
 		
 		print(f"Finished iteration in {(time.time() - start_time)} seconds")
 			

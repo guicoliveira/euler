@@ -1,9 +1,9 @@
-import auxiliarFunctions
+import auxiliar_functions
 
 def removeRightDigit(digits):
 	for i in range(len(digits)-1):
 		digits = digits[:-1]
-		if not auxiliarFunctions.is_prime(int(digits)):
+		if not auxiliar_functions.is_prime(int(digits)):
 			return False
 
 	return True
@@ -13,7 +13,7 @@ def removeLeftDigit(digits):
 		digits = digits[1:]
 		if int(digits) == 1:
 			return False
-		if auxiliarFunctions.is_prime(int(digits)) == False:
+		if auxiliar_functions.is_prime(int(digits)) == False:
 			return False
 
 	return True
@@ -36,7 +36,7 @@ def exercise37():
 	count = 0
 	i = 10
 	while count < 11:
-		i = auxiliarFunctions.getNextPrimeNumber(i)
+		i = auxiliar_functions.get_next_prime_number(i)
 		#print(f"Number {i} =======================")
 			
 		digits = str(i)

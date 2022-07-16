@@ -1,5 +1,5 @@
 def exercise25():
-	print("Exercise 25")
+	raise NotImplementedError("Not implemented - Exercise 25")
 
 if __name__ == '__main__':
 	exercise25()

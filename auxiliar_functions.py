@@ -1,23 +1,17 @@
 import math
 
-def digitsArrayToInt(digits, length):
-    
+
+def digits_array_to_int(digits, length):
     return int(digits)
 
-    '''strTest = ""
-    for i in range(length):
-        strTest += digits[i]
-    
-    #print(strTest)
-    return int(strTest)'''
 
-
-def isPrimeForEx41(number):
+def is_prime_for_ex_41(number):
     for i in range(3, int(number/2)+1, 2):
         if(number % i) == 0:
             return False
 
     return True
+
 
 def is_prime(n: int) -> bool:
     """Got it from the internet. Primality test using 6k+-1 optimization."""
@@ -32,17 +26,8 @@ def is_prime(n: int) -> bool:
         i += 6
     return True
 
-def isPrime(number):
-    """Don't use this one, use the newer is_prime()"""
-    if(number % 2) == 0:
-        return False
-    for i in range(3, int(number/3), 2):
-        if(number % i) == 0:
-            return False
 
-    return True
-
-def getNextPrimeNumber(startingNumber):
+def get_next_prime_number(startingNumber):
     if startingNumber % 2 == 0:
         startingNumber += 1
     else:
@@ -55,41 +40,31 @@ def getNextPrimeNumber(startingNumber):
             startingNumber += 2
 
 
-def getDivisorsOld(number):
-    ##divisors = []
-    ##divisors.append(1)
-    nDiv = 1
-    for i in range(2, int((number/4))):
-            if(number % i) == 0:
-                print(number, ' is divisivel por ', i)
-                nDiv += 1##divisors.append(i)
-
-    return nDiv*2
-
-
-def getDivisors(number):
-    nDiv = 1 ## 1 
+def get_divisors(number):
+    n_div = 1 ## 1
     for i in range(2, int(math.sqrt(number))+1):
         if (number % i) == 0:
             ##print('for ', number, ' divisors: ', i)
-            nDiv += 1
-    nDiv = nDiv * 2 
+            n_div += 1
+    n_div = n_div * 2
 
     ##print('sqrt: ',int(math.sqrt(number)))
     if(int(math.sqrt(number)) * int(math.sqrt(number)) == number):
-        nDiv -= 1
+        n_div -= 1
 
-    return nDiv
+    return n_div
 
-def startWritingNumber(number):
+
+def start_writing_number(number):
     if(len(number) == 3):
-        return getThreeDigitNumberWritten(number)
+        return get_three_digit_number_written(number)
     elif(len(number) == 2):
-        return getTwoDigitNumberWritten(number)
+        return get_two_digit_number_written(number)
     elif(len(number) == 1):
-        return getOneDigitNumberWritten(number)
+        return get_one_digit_number_written(number)
 
-def getThreeDigitNumberWritten(number):
+
+def get_three_digit_number_written(number):
     switcher = {
         '0': "",
         '1': "one",
@@ -113,13 +88,12 @@ def getThreeDigitNumberWritten(number):
 
     dezena = number[1]
     dezena += number[2]
-    centena += getTwoDigitNumberWritten(dezena)
+    centena += get_two_digit_number_written(dezena)
 
     return centena
 
-
     
-def getTwoDigitNumberWritten(number):
+def get_two_digit_number_written(number):
     switcher = {
         '0': "",
         '2': "twenty",
@@ -133,14 +107,14 @@ def getTwoDigitNumberWritten(number):
     }
 
     if(number[0] == '1'):
-        return getFrom10To20NumberWritten(number[1])
+        return get_10_to_20_number_written(number[1])
 
     dezena = switcher.get(number[0], "Invalid number")
-    dezena += getOneDigitNumberWritten(number[1])
+    dezena += get_one_digit_number_written(number[1])
 
     return dezena
 
-def getFrom10To20NumberWritten(number):
+def get_10_to_20_number_written(number):
     switcher = {
         '0': "ten",
         '1': "eleven",
@@ -156,7 +130,7 @@ def getFrom10To20NumberWritten(number):
     return (switcher.get(number, "Invalid month"))
 
 
-def getOneDigitNumberWritten(number):
+def get_one_digit_number_written(number):
     switcher = {
         '0': "",
         '1': "one",

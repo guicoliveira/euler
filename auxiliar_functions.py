@@ -5,6 +5,14 @@ def digits_array_to_int(digits, length):
     return int(digits)
 
 
+def is_list_similar(li1, li2):
+    return True if len(list(set(li1) - set(li2)) + list(set(li2) - set(li1))) == 0 else False
+
+
+def is_odd_composite_number(number):
+    if number % 2 == 0:
+        return False
+
 def is_prime_for_ex_41(number):
     for i in range(3, int(number/2)+1, 2):
         if(number % i) == 0:
@@ -32,7 +40,7 @@ def get_next_prime_number(startingNumber):
         startingNumber += 1
     else:
         startingNumber += 2
-    
+
     while True:
         if is_prime(startingNumber):
             return startingNumber
@@ -41,26 +49,26 @@ def get_next_prime_number(startingNumber):
 
 
 def get_divisors(number):
-    n_div = 1 ## 1
-    for i in range(2, int(math.sqrt(number))+1):
+    n_div = 1  ## 1
+    for i in range(2, int(math.sqrt(number)) + 1):
         if (number % i) == 0:
             ##print('for ', number, ' divisors: ', i)
             n_div += 1
     n_div = n_div * 2
 
     ##print('sqrt: ',int(math.sqrt(number)))
-    if(int(math.sqrt(number)) * int(math.sqrt(number)) == number):
+    if (int(math.sqrt(number)) * int(math.sqrt(number)) == number):
         n_div -= 1
 
     return n_div
 
 
 def start_writing_number(number):
-    if(len(number) == 3):
+    if (len(number) == 3):
         return get_three_digit_number_written(number)
-    elif(len(number) == 2):
+    elif (len(number) == 2):
         return get_two_digit_number_written(number)
-    elif(len(number) == 1):
+    elif (len(number) == 1):
         return get_one_digit_number_written(number)
 
 
@@ -81,7 +89,7 @@ def get_three_digit_number_written(number):
     centena = switcher.get(number[0], "Invalid number")
     centena += "hundred"
 
-    if(number[1] == '0' and number[2] == '0'):
+    if (number[1] == '0' and number[2] == '0'):
         return centena
     else:
         centena += "and"
@@ -92,7 +100,7 @@ def get_three_digit_number_written(number):
 
     return centena
 
-    
+
 def get_two_digit_number_written(number):
     switcher = {
         '0': "",
@@ -106,13 +114,14 @@ def get_two_digit_number_written(number):
         '9': "ninety"
     }
 
-    if(number[0] == '1'):
+    if (number[0] == '1'):
         return get_10_to_20_number_written(number[1])
 
     dezena = switcher.get(number[0], "Invalid number")
     dezena += get_one_digit_number_written(number[1])
 
     return dezena
+
 
 def get_10_to_20_number_written(number):
     switcher = {

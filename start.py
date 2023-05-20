@@ -1,10 +1,9 @@
 import time
-from auxiliarClasses.Tree import *
-import auxiliar_functions
 import sys
-import glob
-from exercises import *
 import exercises
+
+# Line needed to run each exercise file
+from exercises import *
 
 
 exercise_number = None
@@ -35,22 +34,6 @@ method_to_call()
 
 print("--- Took %s seconds ---" % (time.time() - start_time))
 
-
-'''#9
-
-'''
-
-'''#8
-
-'''
-
-'''#7
-
-'''
-
-'''#6
-
-'''
 
 '''#5
 smallestNum = 0

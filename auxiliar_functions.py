@@ -35,17 +35,17 @@ def is_prime(n: int) -> bool:
     return True
 
 
-def get_next_prime_number(startingNumber):
-    if startingNumber % 2 == 0:
-        startingNumber += 1
+def get_next_prime_number(starting_number: int) -> int:
+    if starting_number % 2 == 0:
+        starting_number += 1
     else:
-        startingNumber += 2
+        starting_number += 2
 
     while True:
-        if is_prime(startingNumber):
-            return startingNumber
+        if is_prime(starting_number):
+            return starting_number
         else:
-            startingNumber += 2
+            starting_number += 2
 
 
 def get_divisors(number):

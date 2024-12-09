@@ -1,35 +1,36 @@
 
-class currentDate:
-	year:int
-	month:int
-	day:int
-	weekday:int
-	leap_year:bool
+class CurrentDate:
+	def __init__(self, year: int, month: int, day: int,	weekday: int, leap_year: bool):
+		self.year = year
+		self.month = month
+		self.day = day
+		self.weekday = weekday
+		self.leap_year = leap_year
 
 	def skip_day(self):
 		#print(f"{self.day} / {self.month} / {self.year} - weekday: {self.weekday}")
 		if self.month == 2:
 			if self.leap_year:
 				if self.day == 29:
-					self.skip_month(self)
+					self.skip_month()
 				else:
 					self.day += 1
 			else:
 				if self.day == 28:
-					self.skip_month(self)
+					self.skip_month()
 				else:
 					self.day += 1
 		elif self.month == 9 or self.month == 11 or self.month == 6 or self.month == 4:
 			if self.day == 30:
-				self.skip_month(self)
+				self.skip_month()
 			else:
 				self.day += 1
 		else:
 			if self.day == 31:
 				if self.month == 12:
-					self.skip_year(self)
+					self.skip_year()
 				else:
-					self.skip_month(self)
+					self.skip_month()
 			else:
 				self.day += 1
 
@@ -46,7 +47,7 @@ class currentDate:
 		self.year += 1
 		self.month = 1
 		self.day = 1
-		self.is_leap_year(self)
+		self.is_leap_year()
 		#print(f"New year {self.year}, leap year: {self.leap_year}.")
 
 	def is_leap_year(self):
@@ -56,21 +57,22 @@ class currentDate:
 			self.leap_year = False
 
 def exercise19():
-	current_date = currentDate
-	current_date.year = 1901
-	current_date.month = 1
-	current_date.day = 1
-	current_date.weekday = 3
-	current_date.leap_year = False
+	current_date = CurrentDate(
+		year=1901,
+		month=1,
+		day=1,
+		weekday=3,
+		leap_year=False
+	)
 	
-	sum = 0
+	total_sum = 0
 
 	while current_date.year < 2000 or current_date.month < 12 or current_date.day < 31:
-		current_date.skip_day(current_date)
-		if current_date.weekday == 8 and current_date.day == 1:
-			sum += 1
+		current_date.skip_day()
+		if current_date.weekday == 7 and current_date.day == 1:
+			total_sum += 1
 
-	print(f"Result {sum}")
+	print(f"Result {total_sum}")
 
 
 if __name__ == '__main__':

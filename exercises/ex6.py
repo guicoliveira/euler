@@ -1,13 +1,13 @@
 def exercise6():
-	squareOfSums = 0
-	sumSquares = 0
+	square_of_sums = 0
+	sum_squares = 0
 	for i in range(1, 101):
-		sumSquares += (i * i)
-		squareOfSums += i
+		sum_squares += (i * i)
+		square_of_sums += i
 
-	squareOfSums = squareOfSums * squareOfSums
+	square_of_sums = square_of_sums * square_of_sums
 
-	result = squareOfSums - sumSquares
+	result = square_of_sums - sum_squares
 	print(f"Result: {result}")
 
 

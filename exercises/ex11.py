@@ -25,48 +25,48 @@ def exercise11():
 
 	gs = 20
 
-	biggestProduct = 0
-	lastI = 0
-	lastJ = 0
+	biggest_product = 0
+	last_i = 0
+	last_j = 0
 	direction = 'hi'
-	diagonalLeftValue = 0
+	diagonal_left_value = 0
 
 	for i in range(gs):
 		for j in range(gs):
 			if j < gs - 3:
-				horizontalValue = int(numbers[(i * gs) + j]) * int(numbers[(i * gs) + j + 1]) * int(
+				horizontal_value = int(numbers[(i * gs) + j]) * int(numbers[(i * gs) + j + 1]) * int(
 					numbers[(i * gs) + j + 2]) * int(numbers[(i * gs) + j + 3])
 			if i < gs - 3:
-				verticalValue = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j]) * int(
+				vertical_value = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j]) * int(
 					numbers[((i + 2) * gs) + j]) * int(numbers[((i + 3) * gs) + j])
 			if i < gs - 3 and j < gs - 3:
-				diagonalRightValue = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j + 1]) * int(
+				diagonal_right_value = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j + 1]) * int(
 					numbers[((i + 2) * gs) + j + 2]) * int(numbers[((i + 3) * gs) + j + 3])
 			if i < gs - 3 and j > 2:
-				diagonalLeftValue = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j - 1]) * int(
+				diagonal_left_value = int(numbers[(i * gs) + j]) * int(numbers[((i + 1) * gs) + j - 1]) * int(
 					numbers[((i + 2) * gs) + j - 2]) * int(numbers[((i + 3) * gs) + j - 3])
 
-			if biggestProduct < horizontalValue:
-				biggestProduct = horizontalValue
-				lastI = i
-				lastJ = j
+			if biggest_product < horizontal_value:
+				biggest_product = horizontal_value
+				last_i = i
+				last_j = j
 				direction = 'Horizontal'
-			if biggestProduct < verticalValue:
-				biggestProduct = verticalValue
-				lastI = i
-				lastJ = j
+			if biggest_product < vertical_value:
+				biggest_product = vertical_value
+				last_i = i
+				last_j = j
 				direction = 'Vertical'
-			if biggestProduct < diagonalRightValue:
-				biggestProduct = diagonalRightValue
-				lastI = i
-				lastJ = j
+			if biggest_product < diagonal_right_value:
+				biggest_product = diagonal_right_value
+				last_i = i
+				last_j = j
 				direction = 'Diagonal Right'
-			if biggestProduct < diagonalLeftValue:
-				biggestProduct = diagonalLeftValue
-				lastI = i
-				lastJ = j
+			if biggest_product < diagonal_left_value:
+				biggest_product = diagonal_left_value
+				last_i = i
+				last_j = j
 				direction = 'Diagonal Left'
-	print(biggestProduct, '; in position [', lastI + 1, ',', lastJ + 1, '] in ', direction)
+	print(f"{biggest_product} - in position ['{last_i + 1}, {last_j + 1}] in {direction}")
 
 
 

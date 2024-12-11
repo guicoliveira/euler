@@ -1,8 +1,30 @@
 def exercise63():
-	raise NotImplementedError("Exercise not implemented.")
+	matches = 0
+	value = 1
+	power = 1
+	while True:
+		power_result = value ** power
+		number_len = len(str(power_result))
+		print(f"{value} ** {power} = {power_result}")
+
+		if number_len == power:
+			print(f"{power_result} has {power} digits")
+			matches += 1
+		elif number_len < power:
+			pass
+		else:
+			value = 0
+			power += 1
+			print(f"\n")
+		value += 1
+
+		if power >= 22:
+			print(f"Result: {matches}")
+			return
 
 
 if __name__ == '__main__':
+	# EXPLANATION: 10 ** N has always N+1 digits, after power 21 there are no matches with value < 10
 	exercise63()
 
 

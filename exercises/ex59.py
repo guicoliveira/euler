@@ -34,6 +34,9 @@ def get_total_ascii_value(values: list[str], key: list[int]) -> int:
 		position += 1
 
 	print(f"Final message: {str_result}")
+	result = 0
+	for letter in str_result:
+		result += ord(letter)
 	return result
 
 
